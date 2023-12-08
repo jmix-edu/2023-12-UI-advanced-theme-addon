@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
+
+group = 'com.company'
+version = '0.0.1-SNAPSHOT'
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifactId = 'theme-addon-addon'
+            from components.java
+        }
+    }
+}
+
+jar.manifest {
+    attributes(['Vaadin-Stylesheets': 'VAADIN/addons/theme-addon-addon/theme-addon-addon.scss'])
+}
